@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Bate Papo UOL</title>
+  </head>
+
+  <body>
+    <div class="topo">
+        <img src="imagens/logo 1.png" alt="">
+        <ion-icon name="people" onclick="ativarTelaParticipantes()"></ion-icon>
+    </div>
+  
+    <div class="chat"></div>
+    
+    <div class="base">
+        <div>
+          <input class="input-mensagem" placeholder="Escreva aqui...">
+          <h2></h2>
+        </div>
+        <ion-icon name="paper-plane-outline" onclick="postar()"></ion-icon>
+    </div>
+  
+    <div class="tela-inicial">
+        <img src="imagens/logo 1.png" alt="">
+        <input class="input-nome" placeholder="Digite seu nome">
+        <button onclick="start()">Entrar</button>
+        <div class="carregando hidden">
+          <img src="imagens/loading.gif" alt="">
+          <h1>Carregando</h1>
+        </div>
+    </div>
+  
+    <div class="tela-participantes hidden">
+        <div class="retorno" onclick="ativarTelaParticipantes()"></div>
+            <div class="participantes">
+                <h1>Escolha um contato</br>para enviar a mensagem:</h1>
+            <div class="contatos"></div>
+            <h1>Escolha a visibilidade:</h1>
+            <div class="visibilidade">
+                <div class="publico selecionado" onclick="selecionarVisibilidade(this)">
+                    <ion-icon name="lock-open"></ion-icon>
+                    <h2>Público</h2>
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                </div>
+    
+                <div class="reservadamente" onclick="selecionarVisibilidade(this)">
+                    <ion-icon name="lock-closed"></ion-icon>
+                    <h2>Reservadamente</h2>
+                    <ion-icon name="checkmark-outline"></ion-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
